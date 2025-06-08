@@ -11,15 +11,15 @@ import React, {
   useLayoutEffect,
 } from "react";
 import {
-  createChart, // Hàm tạo biểu đồ chính
-  ColorType, // Kiểu màu sắc
-  IChartApi, // Interface của đối tượng biểu đồ
-  ISeriesApi, // Interface của đối tượng series (nến, khối lượng)
-  CandlestickSeriesPartialOptions, // Tùy chọn cho series nến
-  HistogramSeriesPartialOptions, // Tùy chọn cho series khối lượng
-  DeepPartial, // Helper type cho các tùy chọn sâu
-  Time, // Kiểu dữ liệu thời gian
-} from "lightweight-charts";
+  createChart,
+  ColorType,
+  IChartApi,
+  ISeriesApi,
+  CandlestickSeriesPartialOptions,
+  HistogramSeriesPartialOptions,
+  DeepPartial,
+  Time,
+} from 'lightweight-charts';
 import { getHistoricalData, getCurrentPrice } from "@/services/binance"; // Import các hàm API
 import {
   ChartCandlestickData,
