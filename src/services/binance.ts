@@ -17,6 +17,23 @@ const API_URL = 'https://api.binance.com/api/v3'
       params: { symbol, interval, limit },
     });
 
+
+    //xử lý dữ liệu trả về từ API
+ const chartData = response.data.map((item) => ({
+      time: item[0], // Timestamp
+      open: parseFloat(item[1]),
+      high: parseFloat(item[2]),
+      low: parseFloat(item[3]),
+      close: parseFloat(item[4]),
+    }));
+
+
+    const volumeData = response.data.map((item) => ({
+      time: item[0], // Timestamp
+      volume: parseFloat(item[5]),
+    }));
+
+    
        return { chartData, volumeData };
   } catch (error) {
     console.error("Lỗi khi lấy dữ liệu lịch sử:", error);
